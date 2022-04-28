@@ -59,11 +59,11 @@ async def on_ready():
                 save_chunk(formatted, "{0}/{1}/".format(gfolder, channel.name), message.created_at.strftime("%Y-%m-%d_%H-%M-%S") + ".txt")
                 print("#{0} was downloaded and saved!".format(channel.name))
             else:
-                print("Warning! Channel #{0} will not be archived, due to missing permissions (try enabling 'Read Message History' in this channel".format(channel.name))
+                print("Warning! Channel #{0} cannot be archived (try enabling 'Read Message History' in this channel".format(channel.name))
         except discord.errors.Forbidden:
-            print("Warning! Channel #{0} will not be archived, due to missing permissions (bot can not read messages in that channel)".format(channel.name))
+            print("Warning! Channel #{0} cannot be archived (bot can not read messages in that channel)".format(channel.name))
             
-    print("Archiving finished!")
+    print("Download complete!")
     await client.close()
-print("Logging in...") 
+print("Starting...") 
 client.run("Bot Token Goes Here")
